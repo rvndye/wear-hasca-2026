@@ -1,0 +1,8 @@
+  0%|          | 0.00/88.2k [00:00<?, ?B/s]100%|██████████| 88.2k/88.2k [00:00<00:00, 196kB/s]
+Successfully submitted to 3rd WEAR Dataset Challenge @HASCA 2026
+Fri Sep  4 15:07:14 UTC 2026 submitted subs/sub_f2_nnHS7_full.csv
+Fri Sep  4 15:08:14 UTC 2026 probe score 0.75513
+  0%|          | 0.00/88.1k [00:00<?, ?B/s]100%|██████████| 88.1k/88.1k [00:00<00:00, 193kB/s]
+Successfully submitted to 3rd WEAR Dataset Challenge @HASCA 2026
+Fri Sep  4 15:08:17 UTC 2026 submitted subs/sub_m_all3.csv
+Fri Sep  4 15:08:17 UTC 2026 AUTO DONE

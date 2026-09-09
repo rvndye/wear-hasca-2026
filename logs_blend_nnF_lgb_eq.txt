@@ -1,0 +1,7 @@
+nn_full_F    w=1.0 rows=552471 OOF F1=0.6493
+lgb_best_s25 w=1.0 rows=552471 OOF F1=0.6485
+lgb_center_s25 w=1.0 rows=552471 OOF F1=0.5813
+lgb_noVideo  w=1.0 rows=276276 OOF F1=0.5741
+rows with all models: 276276
+BLEND OOF F1 0.6738 bias-tuned 0.7390 CV-honest-tuned 0.7349 bias=[-1.0, 0.0, -0.2, -0.4, -0.6, -0.1, 0.1, 0.1, 0.2, -0.4, -0.3, 0.2, 0.0, 0.2, -0.1, -0.1, -0.1, -0.2, 0.4]
+test pred dist [5788, 442, 355, 324, 337, 332, 178, 320, 417, 227, 488, 286, 382, 432, 382, 460, 411, 356, 317]

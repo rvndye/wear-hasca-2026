@@ -1,0 +1,3 @@
+subs/sub_cand_v3_hcf2.csv|f2_nnHCF_full x2 + f2_nnHD_full + f2_lgb_noVideo_v2_s25_nw + f2_lgb_best_v2_s25 (foldset2 members); OOF 0.735 raw / 0.738 honest
+subs/sub_f2_nnHCF_full.csv|probe: NN hand-feats + per-window instance-normed video + vid_drop 0.5, foldset2 5-fold; OOF 0.690 raw / 0.694 tuned
+subs/sub_cand_lgb3_hcf_nnD.csv|blend3 (lgb center+noVideo+quick) + f2_nnHCF_full + f2_nnD_full; OOF 0.685 raw / 0.742 honest

@@ -1,0 +1,25 @@
+sbj_0 1s
+sbj_0_2 1s
+sbj_1 1s
+sbj_10 2s
+sbj_11 2s
+sbj_12 3s
+sbj_13 4s
+sbj_14 4s
+sbj_14_2 5s
+sbj_15 5s
+sbj_16 6s
+sbj_17 6s
+sbj_18 7s
+sbj_19 7s
+sbj_2 8s
+sbj_20 8s
+sbj_21 9s
+sbj_3 9s
+sbj_4 10s
+sbj_5 10s
+sbj_6 11s
+sbj_7 11s
+sbj_8 12s
+sbj_9 12s
+done (138632, 4, 218)

@@ -1,0 +1,8 @@
+stack X (552471, 134) Xt (12234, 134) models ['f2_nnHCF_full', 'f2_nnHCF_full_s1', 'f2_nnHD_full', 'f2_nnCF_full', 'f2_nnD_full', 'f2_lgb_noVideo_v2_s25_nw', 'f2_lgb_best_v2_s25']
+fold 0 best_it=41 F1=0.6765
+fold 1 best_it=41 F1=0.7473
+fold 2 best_it=65 F1=0.7423
+fold 3 best_it=28 F1=0.7333
+fold 4 best_it=30 F1=0.7884
+STACK OOF F1 0.7411 bias-tuned 0.7454 CV-honest 0.7397
+test dist [5579, 449, 344, 327, 348, 342, 254, 406, 493, 223, 427, 400, 268, 404, 378, 473, 359, 383, 377]

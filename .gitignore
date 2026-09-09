@@ -1,0 +1,13 @@
+# competition data (re-download with download.sh) and derived caches (rebuild with prep.py etc.)
+data/
+cache/
+# model predictions / weights (archived as GitHub release assets)
+preds/
+*.npy
+*.pt
+# environment
+.venv/
+__pycache__/
+*.pyc
+nohup.out
+.DS_Store

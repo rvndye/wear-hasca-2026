@@ -1,0 +1,6 @@
+windows 138632
+video pca var explained 0.861 0.448
+X (552471, 284) Xt (12234, 284)
+fold 0 sbj=[np.int64(1), np.int64(4), np.int64(5), np.int64(9)] best_it=134 F1=0.4758 182s
+fold 1 sbj=[np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(15)] best_it=1412 F1=0.5425 1854s
+fold 2 sbj=[np.int64(0), np.int64(19), np.int64(20), np.int64(21)] best_it=99 F1=0.5026 2001s

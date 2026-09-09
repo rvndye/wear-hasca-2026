@@ -1,0 +1,14 @@
+windows 138632
+video pca var explained 0.876 0.448
+X (552471, 310) Xt (12234, 310)
+fold 0 sbj=[np.int64(1), np.int64(4), np.int64(5), np.int64(9)] best_it=1223 F1=0.5434 795s
+fold 1 sbj=[np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(15)] best_it=1519 F1=0.6310 14564s
+fold 2 sbj=[np.int64(0), np.int64(19), np.int64(20), np.int64(21)] best_it=1371 F1=0.6096 15358s
+fold 3 sbj=[np.int64(3), np.int64(7), np.int64(8), np.int64(14), np.int64(16)] best_it=1173 F1=0.6163 16041s
+fold 4 sbj=[np.int64(2), np.int64(6), np.int64(17), np.int64(18)] best_it=1374 F1=0.6413 16875s
+OOF macro F1 0.6127  bias-tuned 0.6258  bias=[-0.8, 0.0, 0.3, -0.1, -0.2, -0.2, -0.2, -0.1, 0.4, 0.0, -0.2, 0.2, -0.2, 0.0, -0.2, 0.0, 0.0, 0.0, 0.5]
+  right_arm  F1=0.6364
+  right_leg  F1=0.5830
+  left_leg   F1=0.5711
+  left_arm   F1=0.6378
+test pred dist [5862, 428, 361, 343, 359, 331, 180, 424, 437, 282, 308, 330, 321, 361, 399, 411, 343, 384, 370]

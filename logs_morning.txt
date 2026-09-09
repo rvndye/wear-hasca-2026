@@ -1,0 +1,13 @@
+== m_lgbF2 f2_lgb_noVideo_v2_s25_nw:1 f2_lgb_best_v2_s25:1 f2_lgb_noVideo_v2_l31:1 f2_lgb_best_s25:0.5
+BLEND OOF F1 0.6685 bias-tuned 0.6884 CV-honest-tuned 0.6832 bias=[-0.7, -0.5, -0.1, -0.6, -0.5, -0.4, 0.0, -0.1, 0.4, -0.1, -0.4, 0.4, 0.1, 0.0, -0.3, 0.0, -0.1, -0.1, 0.3]
+== m_nnH f2_nnHCF_full:1 f2_nnHCF_full_s1:1 f2_nnHD_full:1
+BLEND OOF F1 0.7284 bias-tuned 0.7331 CV-honest-tuned 0.7266 bias=[-0.2, 0.1, 0.0, -0.2, -0.2, 0.0, 0.1, 0.1, 0.3, -0.5, -0.3, 0.2, 0.0, 0.0, -0.1, 0.3, 0.0, 0.0, 0.3]
+== m_nnH_lgb f2_nnHCF_full:1 f2_nnHCF_full_s1:1 f2_nnHD_full:1 f2_lgb_noVideo_v2_s25_nw:1 f2_lgb_best_v2_s25:1 f2_lgb_noVideo_v2_l31:1
+BLEND OOF F1 0.7267 bias-tuned 0.7398 CV-honest-tuned 0.7355 bias=[-0.5, -0.1, 0.0, -0.3, -0.4, -0.1, 0.0, 0.0, 0.2, -0.2, -0.4, 0.0, -0.1, 0.0, -0.2, -0.1, -0.1, -0.1, 0.2]
+== m_all f2_nnHCF_full:1 f2_nnHCF_full_s1:1 f2_nnHD_full:1 f2_nnCF_full:1 f2_nnCF_full_s1:1 f2_nnD_full:1 f2_lgb_noVideo_v2_s25_nw:1 f2_lgb_best_v2_s25:1 f2_lgb_noVideo_v2_l31:1 lgb_center:1 lgb_noVideo:1
+BLEND OOF F1 0.7293 bias-tuned 0.7519 CV-honest-tuned 0.7471 bias=[-0.5, 0.0, 0.0, -0.2, -0.2, 0.0, 0.1, 0.1, 0.4, -0.2, -0.3, 0.2, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3]
+== m_all_lgbheavy f2_nnHCF_full:1 f2_nnHCF_full_s1:1 f2_nnHD_full:1 f2_nnD_full:1 f2_lgb_noVideo_v2_s25_nw:2 f2_lgb_best_v2_s25:2 f2_lgb_noVideo_v2_l31:2 lgb_center:2 lgb_noVideo:2
+BLEND OOF F1 0.6922 bias-tuned 0.7241 CV-honest-tuned 0.7193 bias=[-0.8, -0.1, 0.0, -0.4, -0.6, -0.1, 0.0, -0.1, 0.3, -0.3, -0.6, 0.2, 0.0, 0.2, -0.2, 0.0, -0.1, -0.1, 0.4]
+== m_inertial_only f2_nnHD_full:1 f2_nnD_full:1 f2_lgb_noVideo_v2_s25_nw:1 f2_lgb_noVideo_v2_l31:1 lgb_noVideo:1
+BLEND OOF F1 0.6326 bias-tuned 0.6440 CV-honest-tuned 0.6398 bias=[-0.6, -0.1, 0.1, -0.3, -0.5, -0.1, 0.0, 0.0, 0.4, 0.1, -0.2, 0.1, -0.2, 0.1, -0.1, -0.1, 0.0, 0.0, 0.3]
+MORNING DONE Fri Sep  4 02:11:54 UTC 2026
