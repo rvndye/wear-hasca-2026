@@ -5,7 +5,7 @@ Human activity recognition on the WEAR outdoor-sports dataset: 19 classes (null 
 (768-d) from the egocentric camera. Test participants are unseen. Metric: macro-F1.
 Competition: https://www.kaggle.com/competitions/3rd-wear-dataset-challenge-hasca-2026
 
-**Result:** public leaderboard macro-F1 **0.783** (11th of 83 teams, Sep 4 2026) with an equal-weight ensemble of
+**Result:** public leaderboard macro-F1 **0.785** (`subs/sub_m_all3.csv`, 11th of 83 teams, Sep 2026) with an equal-weight ensemble of
 ~16 models plus a LightGBM stacker. Prize eligibility had already closed (HASCA technical-report deadline July 5 2026),
 so this was a leaderboard-only effort.
 
