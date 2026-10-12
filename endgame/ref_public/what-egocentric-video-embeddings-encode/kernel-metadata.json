@@ -1,0 +1,23 @@
+{
+  "id": "kansukehabano/what-egocentric-video-embeddings-encode",
+  "id_no": 137799506,
+  "title": "What Egocentric Video Embeddings Encode",
+  "code_file": "what-egocentric-video-embeddings-encode.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": false,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": false,
+  "keywords": [
+    "gpu"
+  ],
+  "dataset_sources": [
+    "kansukehabano/wear-video-graph-inputs"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [
+    "3rd-wear-dataset-challenge-hasca-2026"
+  ],
+  "model_sources": []
+}

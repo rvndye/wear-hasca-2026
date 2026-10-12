@@ -91,3 +91,8 @@ null weight 0.5 0.675/0.681 (neutral) | **static path (inorm dynamics + centered
 stack3 (leaves 63, +l31 LGB) 0.7415/0.741; m_all + stack1 + stack3 honest 0.7515.
 Full runs: HCF7 (vd 0.7) 0.702/0.713 | **HS7 (static path + vd 0.7) 0.726/0.741 (best single)**.
 Blends: m_all2 (+HCF7) honest 0.752 | m_all3 (+HS7 x2, HCF7 x2) honest 0.757. auto_submit.sh probes HS7 alone, then m_all3 if probe >= 0.735 else m_all2.
+
+
+### 2026-10-10 to 10-12 - endgame
+See README "Endgame". Baseline public file 0.92990 -> our first fork 0.93335 -> vote of 3 forks 0.93428 ->
+final unwhitened 25-run vote 0.93459 (selected). Whitened votes 0.9320-0.9328 public despite the best OOF (0.9328).
