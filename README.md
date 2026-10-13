@@ -114,6 +114,7 @@ Our September prediction arrays come from the v1.0 release (set `WEAR_PREDS`).
 * Built with the assistance of an AI coding assistant (Claude, Anthropic).
 
 ## License
-No license has been chosen yet for this repository's own code, so default copyright applies. The submission and
-prediction files are derived from the WEAR data and fall under CC BY-NC-SA 4.0. Third-party notebooks keep their
-authors' licenses.
+The code in this repository is released under the MIT License (`LICENSE`). The submission and prediction files
+(`subs/`, `subs_lb/`, `endgame/results/`, and the v1.0 release assets) are derived from the WEAR data and are
+licensed CC BY-NC-SA 4.0 like the dataset. Third-party notebooks keep their authors' licenses
+(`THIRD_PARTY_NOTICES.md`).
