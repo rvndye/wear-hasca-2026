@@ -2,7 +2,10 @@
 usage: mkfork.py <slug> <ours_model|none> <ours_w> [--push]"""
 import json, sys, copy, subprocess, os
 from pathlib import Path
-SRC = Path.home() / 'Desktop/Kaggle/wear/ref2/wear-hasca-part-2-ranked-links-lb-0-92990/wear-hasca-part-2-ranked-links-lb-0-92990.ipynb'
+WL = Path(os.environ.get('WEAR_LB', Path.home() / 'kaggle' / 'wear_lb'))   # endgame working dir
+OWNER = os.environ.get('KAGGLE_OWNER', 'rvndyerwin')                        # Kaggle user that owns the forks and our dataset
+# base notebook: run endgame/fetch_refs.sh first (pulls goodpjw2008's Part 2 notebook into endgame/ref_public/)
+SRC = Path(os.environ.get('WEAR_P2_NB', Path(__file__).resolve().parents[1] / 'ref_public/wear-hasca-part-2-ranked-links-lb-0-92990/wear-hasca-part-2-ranked-links-lb-0-92990.ipynb'))
 slug, model, w = sys.argv[1], sys.argv[2], float(sys.argv[3])
 counts = '--counts' in sys.argv
 gpu = '--gpu' in sys.argv
@@ -80,11 +83,11 @@ if counts:
             src = src.replace(a2, 'Xt, kt = profile_features([Pt, Btp] + ([EXT_T] if (COUNTS_ADDON and EXT_T is not None) else []), t["sbj"], {})')
             c['source'] = src.splitlines(True); hit += 1
     assert hit == 1, hit
-d = Path.home() / f'kaggle/wear_lb/kern/{slug}'; d.mkdir(parents=True, exist_ok=True)
+d = WL / 'kern' / slug; d.mkdir(parents=True, exist_ok=True)
 json.dump(nb, open(d / 'nb.ipynb', 'w'), indent=1)
-meta = {"id": f"rvndyerwin/{slug}", "title": slug, "code_file": "nb.ipynb", "language": "python", "kernel_type": "notebook",
+meta = {"id": f"{OWNER}/{slug}", "title": slug, "code_file": "nb.ipynb", "language": "python", "kernel_type": "notebook",
         "is_private": True, "enable_gpu": gpu, "enable_tpu": False, "enable_internet": False, "keywords": [],
-        "dataset_sources": ["goodpjw2008/wear-hasca-part2-gpu-outputs", "rvndyerwin/wear-ours-tile-logp"],
+        "dataset_sources": ["goodpjw2008/wear-hasca-part2-gpu-outputs", f"{OWNER}/wear-ours-tile-logp"],
         "kernel_sources": [], "competition_sources": ["3rd-wear-dataset-challenge-hasca-2026"], "model_sources": []}
 json.dump(meta, open(d / 'kernel-metadata.json', 'w'), indent=1)
 print('built', d)

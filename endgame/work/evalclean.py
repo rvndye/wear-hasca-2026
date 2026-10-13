@@ -2,7 +2,9 @@
 sbj_10 after second 2566 and sbj_2 after second 3452 (activities labelled null), sbj_7 after second 1368 (labels 10 s late)."""
 import json, sys, numpy as np, pandas as pd
 from pathlib import Path
-W = Path.home() / 'kaggle/wear_lb/work'; K = Path.home() / 'kaggle/wear_lb/kout'
+import os
+WL = Path(os.environ.get("WEAR_LB", Path.home() / "kaggle" / "wear_lb"))  # endgame working dir (data, kernel outputs, caches)
+W = WL / 'work'; K = WL / 'kout'
 sim = dict(np.load(W / 'sim_meta.npz')); y, fold, rec, start, sbj = sim['y'], sim['fold'], sim['rec'], sim['start'], sim['sbj']
 stems = [r['stem'] for r in json.load(open(W / 'recordings.json'))]
 sec = start // 50; stem = np.array(stems)[rec]

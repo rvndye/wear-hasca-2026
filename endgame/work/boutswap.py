@@ -4,7 +4,9 @@ gain = sum_{tiles labelled a} [lp_b - lp_a] + sum_{tiles labelled b} [lp_a - lp_
 usage: boutswap.py <run-or-vote-labels.npy> <evidence names...>"""
 import sys, numpy as np, itertools
 from pathlib import Path
-W = Path.home() / 'kaggle/wear_lb/work'; K = Path.home() / 'kaggle/wear_lb/kout'
+import os
+WL = Path(os.environ.get("WEAR_LB", Path.home() / "kaggle" / "wear_lb"))  # endgame working dir (data, kernel outputs, caches)
+W = WL / 'work'; K = WL / 'kout'
 sim = dict(np.load(W / 'sim_meta.npz')); y, sbj, fold = sim['y'], sim['sbj'], sim['fold']
 def mf1(y, p, C=19):
     cm = np.bincount(y*C+p, minlength=C*C).reshape(C, C); tp = np.diag(cm); d = cm.sum(0)+cm.sum(1); pr = d > 0; return float((2*tp[pr]/d[pr]).mean())
@@ -30,7 +32,7 @@ if __name__ == '__main__':
     lab = np.load(src) if src.endswith('.npy') else np.load(K / src / 'final_probabilities.npz')['oof_labels'].astype(int)
     print(f'{src}: base OOF {mf1(y, lab):.4f}')
     ev = {'ours_m_all5': np.load(W / 'ours/m_all5_oof.npy'), 'ours_m_all4': np.load(W / 'ours/m_all4_oof.npy')}
-    R = Path.home() / 'kaggle/wear_lb/gpu_out/runs'
+    R = WL / 'gpu_out/runs'
     th = np.log(np.mean([np.exp(np.load(R / f'final_s{i}/oof_raw.npz')['logp']) for i in range(4)], 0) + 1e-9)
     ev['theirs_fusion'] = th; ev['avg_ours5_theirs'] = np.log(0.5 * np.exp(ev['ours_m_all5']) + 0.5 * np.exp(th) + 1e-9)
     if src in [p.name for p in K.iterdir()]:

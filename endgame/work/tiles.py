@@ -3,7 +3,9 @@ from the train inertial CSVs, verify their sha1 asserts, and save sim_meta.npz +
 Video length F is taken as T*3//5 (the public notebook asserts F*5 == T*3 for every recording)."""
 import json, hashlib, numpy as np, pandas as pd
 from pathlib import Path
-D = Path.home() / 'kaggle/wear_lb/data'; W = Path.home() / 'kaggle/wear_lb/work'
+import os
+WL = Path(os.environ.get("WEAR_LB", Path.home() / "kaggle" / "wear_lb"))  # endgame working dir (data, kernel outputs, caches)
+D = WL / 'data'; W = WL / 'work'
 N_CLS, WIN, VLEN, STRIDE, FOLDS = 19, 50, 15, 5, 5
 CLASSES = ["null", "jogging", "jogging (rotating arms)", "jogging (skipping)", "jogging (sidesteps)",
            "jogging (butt-kicks)", "stretching (triceps)", "stretching (lunging)", "stretching (shoulders)",

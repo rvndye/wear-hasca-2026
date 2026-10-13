@@ -1,7 +1,7 @@
 #!/bin/zsh
-cd ~/kaggle/wear
-while ! grep -q "OOF macro" logs_f2_nnHCF7_full.txt 2>/dev/null; do sleep 20; done
-run() { tag=$1; shift; grep -q "PARTIAL\|OOF macro" logs_$tag.txt 2>/dev/null && { echo "skip $tag"; return; }; .venv/bin/python train_nn.py --tag $tag --foldset 2 "$@" > logs_$tag.txt 2>&1; }
+cd "${0:A:h}"
+while ! grep -q "OOF macro" logs/logs_f2_nnHCF7_full.txt 2>/dev/null; do sleep 20; done
+run() { tag=$1; shift; grep -q "PARTIAL\|OOF macro" logs/logs_$tag.txt 2>/dev/null && { echo "skip $tag"; return; }; .venv/bin/python train_nn.py --tag $tag --foldset 2 "$@" > logs/logs_$tag.txt 2>&1; }
 S="--epochs 3 --hand_feats --vid_inorm --vid_static --vid_center --vid_drop 0.7"
 run f2_nnHS7_full $=S
 run f2_nnHS7_full_s1 $=S --seed 1

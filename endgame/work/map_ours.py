@@ -2,7 +2,9 @@
 log-probs per model: ours/<name>_oof.npy (69326,19) float32 log-probs in sim row order, ours/<name>_test.npy (12234,19)."""
 import numpy as np, os, glob
 from pathlib import Path
-W = Path.home() / 'kaggle/wear_lb/work'; O = Path.home() / 'kaggle/wear_lb/oof'; T = Path.home() / 'Desktop/Kaggle/wear/preds'
+import os
+WL = Path(os.environ.get("WEAR_LB", Path.home() / "kaggle" / "wear_lb"))  # endgame working dir (data, kernel outputs, caches)
+W = WL / 'work'; O = WL / 'oof'; T = Path(os.environ.get('WEAR_PREDS', Path(__file__).resolve().parents[2] / 'preds'))
 (W / 'ours').mkdir(exist_ok=True)
 sim = dict(np.load(W / 'sim_meta.npz')); g = np.load(W / 'sim_gidx25.npy'); s = sim['sensor']; y = sim['y']
 def mf1(y, p, C=19):

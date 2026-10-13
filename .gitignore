@@ -11,3 +11,10 @@ __pycache__/
 *.pyc
 nohup.out
 .DS_Store
+# copies of other people's public notebooks (fetch with endgame/fetch_refs.sh)
+endgame/ref_public/
+ref/
+# local run-farm state
+queue.txt
+status.txt
+status.tmp

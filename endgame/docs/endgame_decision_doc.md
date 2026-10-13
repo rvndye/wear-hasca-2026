@@ -1,5 +1,12 @@
 # WEAR@HASCA endgame: decision document (about 54 h left, deadline Oct 12 21:59 UTC)
 
+> Planning note written on Oct 10 2026, before the runs, with the help of an AI coding assistant; kept as written apart from small edits for publication
+> (local paths replaced with repo paths, a local-machine note removed).
+> What changed in execution: the dataset was named `wear-ours-tile-logp` (not `wear-ours-tileprobs`), and
+> `endgame/kern/mkfork.py` probability-averages our window probabilities with weight w = 0.67 / 0.8 / 1.0 instead
+> of the log-linear blend at a = 0.6 / 0.75 sketched below. Paths like `~/kaggle/wear_lb/...` refer to the local
+> working directory (`WEAR_LB`). Outcome: README *Endgame* (9th on the private leaderboard, macro-F1 0.92718).
+
 ## 0. Decisions at a glance
 
 1. **Submit `submission_lb_0_92990.csv` now.** It costs no compute and takes our public score from 0.78492 (best so far, `sub_m_all3`) to 0.92990. The file is in the public dataset `goodpjw2008/wear-hasca-part2-gpu-outputs` (90 KB). I listed the dataset through the API today; I did not download the file.
@@ -139,7 +146,7 @@ How the two tilings line up:
 - How much of the gain survives past the S3/T and link stages.
 
 ### 3.2 Measured evidence on the 69,326 tiles
-The proxy is Briano's label_prop (k 10, tau 0.1, use_p 0.5, alpha 0.9, 20 iterations) over the final_s0 embedding, then P², then Sinkhorn-97 per subject. It has no L0 smoothing. The script is `probe.py` in the scratchpad.
+The proxy is Briano's label_prop (k 10, tau 0.1, use_p 0.5, alpha 0.9, 20 iterations) over the final_s0 embedding, then P², then Sinkhorn-97 per subject. It has no L0 smoothing. The script is `endgame/work/proxy.py`.
 
 | Evidence | Window mF1 | LP+Sinkhorn | Per fold (their folds) |
 |---|---|---|---|
@@ -279,7 +286,6 @@ EXT_O, EXT_T = eo, et   # reused by the add-ons below
   - WEAR_SEED in a CPU fork may trigger two-tower retraining on CPU.
   - CLEANUP deletes the scratch, so WEAR_DUMP=1 is required.
   - `final_probabilities.npz` holds pre-refiner QB.
-- **Local machine:** only 13 GB free. Don't download kernel outputs beyond small files. The public window runs (759 MB) are already at `~/kaggle/wear_lb/gpu_out/runs`.
 - **Herding:** many teams will submit the same 0.92990 file. Moving up on private needs a real gain, not just that file.
 
 ---
@@ -287,5 +293,5 @@ EXT_O, EXT_T = eo, et   # reused by the add-ons below
 ## Files
 - `~/kaggle/wear_lb/work/`: `tiles.py` and `map_ours.py`; `sim_meta.npz` and `sim_gidx25.npy`; `ours/m_all4_oof.npy` and `ours/m_all4_test.npy`, plus 60 other mapped models.
 - `~/kaggle/wear_lb/gpu_out/runs/`: the public window nets and their outputs.
-- `/private/tmp/claude-501/-Users-randy/2a34ae02-c4f2-4d13-93c5-acab5f344b71/scratchpad/probe.py` and `probe.out`: the window and propagation probe.
-- `/Users/randy/Desktop/Kaggle/wear/ref2/wear-hasca-part-2-ranked-links-lb-0-92990/wear-hasca-part-2-ranked-links-lb-0-92990.txt`: the base notebook.
+- `endgame/work/proxy.py`: the window and propagation probe.
+- `endgame/ref_public/wear-hasca-part-2-ranked-links-lb-0-92990/` (fetched by `endgame/fetch_refs.sh`): the base notebook.

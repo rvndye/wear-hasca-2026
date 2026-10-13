@@ -1,7 +1,7 @@
 import os, numpy as np, pandas as pd
 from scipy import stats
 
-ROOT = os.path.expanduser('~/kaggle/wear')
+ROOT = os.environ.get('WEAR_ROOT', os.path.dirname(os.path.abspath(__file__)))  # repo dir by default
 DATA, CACHE = f'{ROOT}/data', f'{ROOT}/cache'
 SENSORS = ["right_arm", "right_leg", "left_leg", "left_arm"]
 S2I = {s: i for i, s in enumerate(SENSORS)}

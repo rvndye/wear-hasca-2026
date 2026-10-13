@@ -1,5 +1,9 @@
 # 3rd WEAR Dataset Challenge (HASCA 2026) - design note
 
+> Historical working log, kept as written during the competition apart from small edits for publication (local paths
+> removed, an October update added) (Sep 3 - Oct 12 2026). Final results and the
+> endgame approach are in the README: 9th on the private leaderboard, macro-F1 0.92718.
+
 Date: 2026-09-03. Work dir `~/kaggle/wear` (venv `.venv`, python 3.12, torch MPS, lightgbm).
 
 ## Task
@@ -35,9 +39,11 @@ the Kaggle LB stays open until ~early Oct 2026. We compete for LB position only.
    pooling over the 15 video frames), same folds, trained on MPS. Multi-sensor training
    (all 4 sensors per window as separate samples).
 4. Blend probabilities (OOF-tuned weights), tune class-prior / null bias on OOF macro-F1.
-5. Deliberately NOT used unless the user asks: reconstructing the test timeline by chaining
-   windows through video-feature similarity (the host removed boundary frames to prevent
-   exactly this; legal under the written rules but against the challenge design).
+5. Deliberately NOT used in September: reconstructing the test timeline by chaining
+   windows through video-feature similarity (the host removed boundary frames, which suggested
+   it was not intended, although the written rules allow it). Update, October: public notebooks
+   built on exactly this came to dominate the leaderboard, the host did not object and prizes had
+   closed, so the endgame (README) adopted it.
 
 ## Validation
 OOF macro-F1 with GroupKFold(5) by subject on stride-25 windows, all 4 sensors.
@@ -96,3 +102,5 @@ Blends: m_all2 (+HCF7) honest 0.752 | m_all3 (+HS7 x2, HCF7 x2) honest 0.757. au
 ### 2026-10-10 to 10-12 - endgame
 See README "Endgame". Baseline public file 0.92990 -> our first fork 0.93335 -> vote of 3 forks 0.93428 ->
 final unwhitened 25-run vote 0.93459 (selected). Whitened votes 0.9320-0.9328 public despite the best OOF (0.9328).
+Private leaderboard (Oct 12): selected vote 0.92718 = 9th place; the whitened 25-run vote would have scored 0.92902
+(also 9th), so OOF was right about whitening and the small public split was not.

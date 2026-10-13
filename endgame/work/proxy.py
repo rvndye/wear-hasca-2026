@@ -2,7 +2,9 @@
 label propagation over the per-subject video graph -> sharpen -> per-subject Sinkhorn count calibration."""
 import numpy as np, scipy.sparse as sp, sys, itertools
 from pathlib import Path
-W = Path.home() / 'kaggle/wear_lb/work'; R = Path.home() / 'kaggle/wear_lb/gpu_out/runs'
+import os
+WL = Path(os.environ.get("WEAR_LB", Path.home() / "kaggle" / "wear_lb"))  # endgame working dir (data, kernel outputs, caches)
+W = WL / 'work'; R = WL / 'gpu_out/runs'
 N_CLS = 19; TRAIN_SETS = {0: 2, 14: 2}
 sim = dict(np.load(W / 'sim_meta.npz')); y = sim['y']; sbj = sim['sbj']
 def macro_f1(y, pred):

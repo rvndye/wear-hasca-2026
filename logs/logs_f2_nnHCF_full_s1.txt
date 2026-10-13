@@ -1,0 +1,30 @@
+windows 138632 loading video to RAM...
+video (138632, 15, 768) 3.2GB in 25s
+hand feats (138632, 4, 309)
+fold 0 sbj=[np.int64(1), np.int64(4), np.int64(5), np.int64(9)] ntr=118064 nva=20568
+  ep 1 loss 1.2890 valF1 0.6403 338s
+  ep 2 loss 0.8186 valF1 0.6521 319s
+  ep 3 loss 0.7215 valF1 0.6480 315s
+train_nn.py:231: UserWarning: The given NumPy array is not writable, and PyTorch does not support non-writable tensors. This means writing to this tensor will result in undefined behavior. You may want to copy the array to protect its data or make it writable before converting it to a tensor. This type of warning will be suppressed for the rest of this program. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/utils/tensor_numpy.cpp:219.)
+  sb = torch.from_numpy(tsens[i:i + bs]).to(dev)
+fold 1 sbj=[np.int64(10), np.int64(11), np.int64(12), np.int64(13), np.int64(15)] ntr=106521 nva=32111
+  ep 1 loss 1.3546 valF1 0.6878 292s
+  ep 2 loss 0.8644 valF1 0.6926 264s
+  ep 3 loss 0.7598 valF1 0.6949 261s
+fold 2 sbj=[np.int64(0), np.int64(19), np.int64(20), np.int64(21)] ntr=115420 nva=23212
+  ep 1 loss 1.3020 valF1 0.6709 276s
+  ep 2 loss 0.8372 valF1 0.7073 285s
+  ep 3 loss 0.7370 valF1 0.7001 304s
+fold 3 sbj=[np.int64(3), np.int64(7), np.int64(8), np.int64(14), np.int64(16)] ntr=99468 nva=39164
+  ep 1 loss 1.3545 valF1 0.6583 104s
+  ep 2 loss 0.8512 valF1 0.6709 42s
+  ep 3 loss 0.7437 valF1 0.6691 42s
+fold 4 sbj=[np.int64(2), np.int64(6), np.int64(17), np.int64(18)] ntr=115055 nva=23577
+  ep 1 loss 1.3338 valF1 0.7130 45s
+  ep 2 loss 0.8603 valF1 0.7357 45s
+  ep 3 loss 0.7578 valF1 0.7355 47s
+OOF macro F1 0.6906 bias-tuned 0.6953
+  right_arm  F1=0.6858
+  right_leg  F1=0.6983
+  left_leg   F1=0.6910
+  left_arm   F1=0.6879

@@ -8,8 +8,9 @@ Outputs (in cache/):
 import os, sys, numpy as np, pandas as pd
 from concurrent.futures import ProcessPoolExecutor
 
-DATA = os.path.expanduser('~/kaggle/wear/data')
-CACHE = os.path.expanduser('~/kaggle/wear/cache')
+ROOT = os.environ.get('WEAR_ROOT', os.path.dirname(os.path.abspath(__file__)))  # repo dir by default
+DATA = f'{ROOT}/data'
+CACHE = f'{ROOT}/cache'
 os.makedirs(CACHE, exist_ok=True)
 CLASSES = ["null", "jogging", "jogging (rotating arms)", "jogging (skipping)", "jogging (sidesteps)",
            "jogging (butt-kicks)", "stretching (triceps)", "stretching (lunging)", "stretching (shoulders)",

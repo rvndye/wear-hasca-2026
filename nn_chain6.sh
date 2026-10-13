@@ -1,6 +1,6 @@
 #!/bin/zsh
-cd ~/kaggle/wear
-run() { tag=$1; shift; grep -q "PARTIAL\|OOF macro" logs_$tag.txt 2>/dev/null && { echo "skip $tag"; return; }; .venv/bin/python train_nn.py --tag $tag --foldset 2 "$@" > logs_$tag.txt 2>&1; }
+cd "${0:A:h}"
+run() { tag=$1; shift; grep -q "PARTIAL\|OOF macro" logs/logs_$tag.txt 2>/dev/null && { echo "skip $tag"; return; }; .venv/bin/python train_nn.py --tag $tag --foldset 2 "$@" > logs/logs_$tag.txt 2>&1; }
 B="--folds 0,1 --hand_feats --vid_inorm"
 run f2_nnH1_mixup $=B --epochs 3 --vid_drop 0.5 --mixup 0.4
 run f2_nnH2_ep4 $=B --epochs 4 --vid_drop 0.5
